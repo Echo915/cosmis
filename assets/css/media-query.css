@@ -1,0 +1,8 @@
+@media screen and (max-width: 700px) {
+    #main-orbit {
+        width: 80%;
+        height: 80vw;
+        border-radius: 100%;
+        top: 300px;
+    }
+}

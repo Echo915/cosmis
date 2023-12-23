@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmis</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap-icons-1.11.1/bootstrap-icons.css">
+    
+    <link rel="icon" href="assets/images/cosmis-icon.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/media-query.css">
+</head>
+<body class="bg-black">
+    <div>
+        <i id="star" class="bi bi-star-fill shadow text-white star"></i>
+    </div>
+    <div id="control-panel">
+        <div id="time-belt">
+            <div id="time" class="text-white h3"></div>
+            <div id="date" class="text-white h5 mb-3"></div>
+            <div>
+                <button class="btn btn-secondary" onclick="showOrbits()">Orbits</button>
+                <button id="anim-sim" class="btn btn-secondary" onclick="animSim()">Animation</button>
+            </div>
+        </div>
+        <p style="display: none;" id="x-mas-msg"><i class="bi bi-tree-fill text-success"></i> <small id="x-mas-msg-text" class="text-white"></small></p>
+    </div>
+    <div style="display: none;" id="main-orbit" class="position-relative orbit">
+        <div id="sun" class="bg-warning sphere"></div>
+        <div id="moon-orbit" class="orbit">
+            <div id="earth" class="bg-primary sphere">
+                <i id="now" class="bi bi-caret-left-fill text-danger"></i>
+            </div>
+            <div id="moon" class="bg-light sphere"></div>
+        </div>
+        <!-- <div id="star" class="position-absolute"></div> -->
+    </div>
+    <script src="assets/javascript/script.js"></script>
+</body>
+</html>

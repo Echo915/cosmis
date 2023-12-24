@@ -113,7 +113,7 @@ function animSim() {
 
         // Animates bodies in orbit
         document.getElementById("main-orbit").style.animation = "revolve 365s linear infinite";
-        document.getElementById("sun").style.animation = "maintain 10s linear infinite";
+        document.getElementById("sun").style.animation = "maintain 365s linear infinite";
         document.getElementById("moon-orbit").style.animation = "moon-revolve 27.3s linear infinite";
         let earth_rotation = 1 - (1 / 27.3);
         document.getElementById("earth").style.animation = `revolve ${earth_rotation}s linear infinite`;

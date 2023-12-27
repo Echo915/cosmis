@@ -64,7 +64,7 @@ function runSimulation() {
     const CHECKPOINT_YEAR = Date.parse(`${this_year}-01-01T00:00:00`); // Converts datetime string to epoch time
     const CHECKPOINT_DATE = Date.parse(`${this_year}-${date.getMonth() + 1}-${date.getDate()}T00:00:00`);
     // const CHECKPOINT_MONTH = Date.parse(`2022-11-08T00:00:00`); // Last lunar eclipse
-    const CHECKPOINT_MONTH = 1667854740 // Last lunar eclipse in epoch time
+    const CHECKPOINT_MONTH = 1667905140000 // Last lunar eclipse in epoch time
 
     // Current Epoch time
     var current_time = Date.now(); 
@@ -73,7 +73,7 @@ function runSimulation() {
     var accum_secs_frm_yr = (current_time - CHECKPOINT_YEAR) / 1000; 
     var accum_days = secsToDay(accum_secs_frm_yr); 
 
-    // Elapsed time from last lunar eclipse (***)
+    // Elapsed time from last lunar eclipse (Novemeber 8, 2022; 5:59 AM EST)
     var accum_secs_frm_eclipse = (current_time - CHECKPOINT_MONTH) / 1000;
     var accum_days_frm_eclipse = secsToDay(accum_secs_frm_eclipse);
     var month_accum_days = accum_days_frm_eclipse % 27.3 // Accumulated days from last full moon 
@@ -100,6 +100,17 @@ function runSimulation() {
 
     document.getElementById("main-orbit").style.display = "flex";
 }
+
+// Gets initial position of the moon in degrees based on the position of the earth
+// from the begining of the day of the last lunar eclipse to the time of maximum total eclipse
+// function initialMoonPos() {
+//     var start = 1667865600;
+//     var end = 1667905140;
+//     var diff = end - start;
+//     var accum_dys = secsToDay(diff);
+//     var dys_degrees = (360/27.3) * accum_dys;
+//     return dys_degrees;
+// }
 
 // Toggles between animation and simulation modes
 function animSim() {
@@ -142,7 +153,7 @@ setInterval(()=>{
 }, 1000);
 
 // Run simulation
-var simulation = setInterval(runSimulation(), 1000);
+var simulation = setInterval(runSimulation, 1000);
 
 // Clone several stars onto space
 for (var i = 0; i < 50; i++) {

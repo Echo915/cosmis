@@ -61,8 +61,8 @@ function runSimulation() {
     let this_year = date.getFullYear();
 
     // Definition of epoch checkpoint periods corresponding to initial state of all objects in program
-    const CHECKPOINT_YEAR = Date.parse(`${this_year}-01-01T00:00:00`); // Converts datetime string to epoch time
-    const CHECKPOINT_DATE = Date.parse(`${this_year}-${date.getMonth() + 1}-${date.getDate()}T00:00:00`);
+    const CHECKPOINT_YEAR = Date.parse(`${this_year}-01-01`); // Converts datetime string to epoch time
+    const CHECKPOINT_DATE = Date.parse(`${this_year}-${date.getMonth() + 1}-${date.getDate()}`);
     // const CHECKPOINT_MONTH = Date.parse(`2022-11-08T00:00:00`); // Last lunar eclipse
     const CHECKPOINT_MONTH = 1667905140000 // Last lunar eclipse in epoch time
 

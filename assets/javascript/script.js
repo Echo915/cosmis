@@ -171,7 +171,8 @@ var date = new Date();
 
 var year;
 var current_year = date.getFullYear();
-var current_year_epoch = Date.parse(`${current_year}-01-01T00:00:00`);
+console.log(current_year)
+var current_year_epoch = new Date(`${current_year}-01-01`).getTime()// Date.parse(`${current_year}-01-01`);
 var current_time = Date.now();
 
 var elapsed_time = (current_time - current_year_epoch) / 1000;
@@ -181,7 +182,8 @@ if (elapsed_days > 351) {
     year = current_year + 1;
 } else if (elapsed_days < 7) {
     year = current_year;
+} else {
+    document.getElementById("x-mas-msg").style.display = "none";
 }
 
-document.getElementById("x-mas-msg").style.display = "block";
 document.getElementById("x-mas-msg-text").innerHTML = `Merry Christmas and a Happy New Year - ${year}`;
